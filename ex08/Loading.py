@@ -14,6 +14,7 @@ def ft_tqdm(lst: range) -> None:
         bar = "#" * block + "-" * (bar_length - block)
         percent = progress * 100
         sys.stdout.write(f"\r|{bar}| {percent:.2f}% Complete | {i}/{total} | Elapsed Time: {elapsed_time:.2f}s")
+        #print(f"|{bar}| {percent:.2f}% Complete | {i}/{total} | Elapsed Time: {elapsed_time:.2f}s", end='\r')
         sys.stdout.flush()
 
         yield item

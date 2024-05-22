@@ -1,9 +1,7 @@
-import math
-
 def NULL_not_found(object: any) -> int:
 
     # NaN
-    if isinstance(object, float) and math.isnan(object):
+    if isinstance(object, float) and object != object:
         print(f"Cheese: nan <class 'float'>")
         return 0
 
@@ -11,7 +9,7 @@ def NULL_not_found(object: any) -> int:
     if object is False:
         print("Fake: False <class 'bool'>")
         return 0
-    if object is 0:
+    if object == 0:
         print("Zero: 0 <class 'int'>")
         return 0
 

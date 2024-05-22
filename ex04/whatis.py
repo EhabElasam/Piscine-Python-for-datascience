@@ -1,20 +1,18 @@
 import sys
 
 def main():
-    if len(sys.argv) != 2:
+    try: 
         if len(sys.argv) == 1:
             print()
-        else:
-            print("AssertionError: more than one argument is provided")
+            return
+        assert (len(sys.argv) == 2), "Too many arguments"
+        if sys.argv[1] is not isdigit() or sys.argv[1][1:].isdigit()and sys.argv[1][0] != '-':
+            assert sys.argv[1][0] == '-', "Argument is not an integer"
+    except Exception as e:
+        print("AssertionError: ", e)
         return
 
-    try:
-        number = int(sys.argv[1])
-    except ValueError:
-        print("AssertionError: argument is not an integer")
-        return
-
-    if number % 2 == 0:
+    if int(sys.argv[1]) % 2 == 0:
         print("I'm Even.")
     else:
         print("I'm Odd.")

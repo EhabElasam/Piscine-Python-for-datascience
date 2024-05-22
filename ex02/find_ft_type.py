@@ -1,7 +1,7 @@
 def all_thing_is_obj(object: any) -> int:
 
     type_name = type(object).__name__
-    if isinstance(object, str) and object in ["Brian", "Toto"]:
+    if isinstance(object, str): #and object in ["Brian", "Toto"]:
         print(f"{object} is in the kitchen : <class '{type_name}'>")
     else:
         type_msg = {
