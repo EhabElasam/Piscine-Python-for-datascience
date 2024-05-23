@@ -1,9 +1,11 @@
 import sys
 
+
 class ArgumentError(Exception):
     pass
 
-def main():    
+
+def main():
     if len(sys.argv) < 3:
         print("Error: Not enough arguments provided.")
         print("Usage: python3 filterstring.py <string> <integer>")
@@ -12,7 +14,7 @@ def main():
         print("Error: Too many arguments provided.")
         print("Usage: python3 filterstring.py <string> <integer>")
         raise ArgumentError("the arguments are bad")
-    
+
     try:
         string = sys.argv[1]
         string = sys.argv[1]
@@ -26,12 +28,13 @@ def main():
         print("Error: The second argument must be an integer.")
         print("Usage: python3 filterstring.py <string> <integer>")
         raise ArgumentError("the arguments are bad")
-    
+
     words = string.split()
-    
+
     result = [word for word in words if len(word) > N]
-    
+
     print(result)
+
 
 if __name__ == "__main__":
     try:

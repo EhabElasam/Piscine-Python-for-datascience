@@ -1,11 +1,12 @@
 def NULL_not_found(object: any) -> int:
     """
-    Diese Funktion überprüft, ob das übergebene Objekt eine Form von 'Null' ist.
-    Sie gibt 0 zurück, wenn das Objekt einer Form von 'Null' entspricht, sonst 1.
+    Diese Funktion überprüft, ob das übergebene Objekt
+    eine Form von 'Null' ist. Sie gibt 0 zurück, wenn das
+    Objekt einer Form von 'Null' entspricht, sonst 1.
     """
     # NaN
     if isinstance(object, float) and object != object:
-        print(f"Cheese: nan <class 'float'>")
+        print("Cheese: nan <class 'float'>")
         return 0
 
     # false or 0

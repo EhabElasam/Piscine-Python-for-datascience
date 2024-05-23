@@ -1,6 +1,7 @@
 import sys
 import string
 
+
 def analyze_text(text):
     counts = {
         "upper_letters": sum(1 for char in text if char.isupper()),
@@ -10,6 +11,7 @@ def analyze_text(text):
         "spaces": sum(1 for char in text if char.isspace())
     }
     return counts
+
 
 def main():
     if len(sys.argv) != 2:
@@ -35,6 +37,7 @@ def main():
     print(f"{counts['punctuation']} punctuation marks")
     print(f"{counts['spaces']} spaces")
     print(f"{counts['digits']} digits")
+
 
 if __name__ == "__main__":
     main()
