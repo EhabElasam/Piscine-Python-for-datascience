@@ -5,9 +5,12 @@ def main():
         if len(sys.argv) == 1:
             print()
             return
-        assert (len(sys.argv) == 2), "Too many arguments"
-        if sys.argv[1] is not isdigit() or sys.argv[1][1:].isdigit()and sys.argv[1][0] != '-':
-            assert sys.argv[1][0] == '-', "Argument is not an integer"
+        arg = sys.argv[1]
+        if arg[0] == '-':
+            assert arg[1:].isdigit(), "Argument is not an integer"
+        else:
+            assert arg.isdigit(), "Argument is not an integer"
+
     except Exception as e:
         print("AssertionError: ", e)
         return
