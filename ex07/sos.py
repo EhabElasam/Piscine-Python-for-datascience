@@ -1,10 +1,6 @@
 import sys
 
 
-class ArgumentError(Exception):
-    pass
-
-
 # Morse-Code-Dictionary
 MORSE_CODE_DICT = {
     'A': '.-',
@@ -47,27 +43,39 @@ MORSE_CODE_DICT = {
 }
 
 
+def convert_to_morse(input_string):
+    """
+    Converts the input string to Morse code using the MORSE_CODE_DICT.
+
+    Parameters:
+    input_string (str): The string to convert to Morse code.
+
+    Returns:
+    str: The converted Morse code string.
+    """
+
+    assert input_string.isalnum(),  ("the arguments are bad")
+    m_c = ' '.join(MORSE_CODE_DICT[char.upper()] for char in input_string)
+    return m_c
+
+
 def main():
+    """
+    Main function to handle command-line arguments
+    and convert the input string to Morse code.
+    """
     if len(sys.argv) != 2:
-        print("Error: Incorrect number of arguments.")
-        print("Usage: python3 sos.py <string>")
-        raise ArgumentError("the arguments are bad")
+        raise AssertionError("the arguments are bad")
 
     input_string = sys.argv[1]
 
-    try:
-        morse_code = ' '.join(MORSE_CODE_DICT[char.upper()]
-                              for char in input_string)
-        print(morse_code)
-    except KeyError:
-        print("Error: The input contains unsupported characters.")
-        print("Usage: python3 sos.py <string>")
-        raise ArgumentError("the arguments are bad")
+    morse_code = convert_to_morse(input_string)
+    print(morse_code)
 
 
 if __name__ == "__main__":
     try:
         main()
-    except ArgumentError as e:
-        print(e)
+    except Exception as e:
+        print("AssertionError:", e)
         sys.exit(1)

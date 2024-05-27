@@ -26,10 +26,13 @@ To install the package, follow these steps:
 To use the package, you can import it and call the `count_in_list` function:
 
 ```python
+python3 -c "
 from ft_package import count_in_list
 
-print(count_in_list(['toto', 'tata', 'toto'], 'toto'))  # Output: 2
-print(count_in_list(['toto', 'tata', 'toto'], 'tutu'))  # Output: 0
+print(count_in_list(['toto', 'tata', 'toto'], 'toto'))  # output: 2
+print(count_in_list(['toto', 'tata', 'toto'], 'tutu'))  # output: 0
+"
+
 ```
 
 ## Uninstallation

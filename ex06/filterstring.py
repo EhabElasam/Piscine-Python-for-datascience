@@ -1,33 +1,32 @@
 import sys
 
 
-class ArgumentError(Exception):
-    pass
-
-
 def main():
+    """
+    Main function to filter words in a string
+    that are longer than a given length.
+    """
+
+    # if len(sys.argv) != 2:
+    #     raise AssertionError("the arguments are bad")
     if len(sys.argv) < 3:
         print("Error: Not enough arguments provided.")
-        print("Usage: python3 filterstring.py <string> <integer>")
-        raise ArgumentError("the arguments are bad")
+        raise AssertionError("the arguments are bad")
     elif len(sys.argv) > 3:
         print("Error: Too many arguments provided.")
-        print("Usage: python3 filterstring.py <string> <integer>")
-        raise ArgumentError("the arguments are bad")
+        raise AssertionError("the arguments are bad")
 
     try:
         string = sys.argv[1]
         string = sys.argv[1]
         if not string.strip():
             print("Error: The string argument must not be empty.")
-            print("Usage: python3 filterstring.py <string> <integer>")
-            raise ArgumentError("the arguments are bad")
+            raise AssertionError("the arguments are bad")
 
         N = int(sys.argv[2])
     except ValueError:
         print("Error: The second argument must be an integer.")
-        print("Usage: python3 filterstring.py <string> <integer>")
-        raise ArgumentError("the arguments are bad")
+        raise AssertionError("the arguments are bad")
 
     words = string.split()
 
@@ -39,6 +38,9 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except ArgumentError as e:
-        print(e)
+    except AssertionError as e:
+        print("AssertionError:", e)
+        sys.exit(1)
+    except Exception as e:
+        print("Erorr:", e)
         sys.exit(1)

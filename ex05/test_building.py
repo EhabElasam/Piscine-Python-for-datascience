@@ -1,6 +1,7 @@
 import unittest
 from building import main
 
+
 class TestBuilding(unittest.TestCase):
     def test_with_text_input(self):
         result = main("Hello World!")
@@ -37,6 +38,7 @@ class TestBuilding(unittest.TestCase):
             "0 digits"
         )
         self.assertEqual(result, "\n".join(expected))
+
 
 if __name__ == '__main__':
     unittest.main()

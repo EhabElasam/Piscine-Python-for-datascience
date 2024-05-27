@@ -54,7 +54,7 @@ def main():
     except AssertionError as e:
         print("AssertionError:", e)
     except Exception as e:
-        print("An unexpected error occurred:", e)
+        print("Erorr:", e)
 
 
 if __name__ == "__main__":
