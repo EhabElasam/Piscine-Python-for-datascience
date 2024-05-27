@@ -13,7 +13,7 @@ def main():
         description='A sample test package',
         author='eelasam',
         author_email='eelasam@student.42vienna.com',
-        url='https://github.com/EhabElasam/Piscine-Python-for-datascience/',
+        url='https://github.com/EhabElasam/Python-for-datascience/ft_package',
     )
 
 
