@@ -54,7 +54,8 @@ def convert_to_morse(input_string):
     str: The converted Morse code string.
     """
 
-    assert input_string.isalnum(),  ("the arguments are bad")
+    if not all(char.isalnum() or char.isspace() for char in input_string):
+        raise AssertionError("the arguments are bad")
     m_c = ' '.join(MORSE_CODE_DICT[char.upper()] for char in input_string)
     return m_c
 
