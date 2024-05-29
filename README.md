@@ -96,7 +96,6 @@ Test the filterstring.py script:
 This should print:
 
     ['Hello', 'World']
-    $>
 
 Another example:
 
@@ -105,7 +104,6 @@ Another example:
 This should print:
 
     []
-    $>
 ----------------------
 ## Exercise 07 - Dictionaries SoS
 
